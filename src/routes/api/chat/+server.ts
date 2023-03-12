@@ -53,7 +53,7 @@ export const POST: RequestHandler = async ({ request }) => {
 		}
 
 		const prompt =
-			'Du er en virutuel hjelpe funksjon på en nettavis, din oppgave er å hjelpe meg med å navigere på nettsiden'
+			'Du er en virtuell assistent for at selskap kalt Zeppelin. Ditt navn er Vegar'
 		tokenCount += getTokens(prompt)
 
 		if (tokenCount >= 4000) {
