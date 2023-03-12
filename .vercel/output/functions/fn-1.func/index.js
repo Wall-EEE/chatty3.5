@@ -634,8 +634,8 @@ var init__2 = __esm({
   ".svelte-kit/output/server/nodes/1.js"() {
     index2 = 1;
     component2 = async () => (await Promise.resolve().then(() => (init_error_svelte(), error_svelte_exports))).default;
-    file2 = "_app/immutable/entry/error.svelte.582db0c8.js";
-    imports2 = ["_app/immutable/entry/error.svelte.582db0c8.js", "_app/immutable/chunks/index.c5da838d.js", "_app/immutable/chunks/singletons.2b01f444.js"];
+    file2 = "_app/immutable/entry/error.svelte.b6b017b4.js";
+    imports2 = ["_app/immutable/entry/error.svelte.b6b017b4.js", "_app/immutable/chunks/index.c5da838d.js", "_app/immutable/chunks/singletons.a12dad0b.js"];
     stylesheets2 = [];
     fonts2 = [];
   }
@@ -51073,7 +51073,7 @@ var init_server_ts = __esm({
   ".svelte-kit/output/server/entries/endpoints/api/chat/_server.ts.js"() {
     init_gpt3_tokenizer();
     init_chunks();
-    OPENAI_KEY = "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";
+    OPENAI_KEY = "";
     GPT3Tokenizer2 = typeof gpt3_tokenizer_default === "function" ? gpt3_tokenizer_default : gpt3_tokenizer_default.default;
     tokenizer = new GPT3Tokenizer2({ type: "gpt3" });
     config = {
@@ -51081,8 +51081,9 @@ var init_server_ts = __esm({
     };
     POST = async ({ request }) => {
       try {
-        if (!OPENAI_KEY)
-          ;
+        if (!OPENAI_KEY) {
+          throw new Error("OPENAI_KEY env variable not set");
+        }
         const requestData = await request.json();
         if (!requestData) {
           throw new Error("No request data");
@@ -51111,7 +51112,7 @@ var init_server_ts = __esm({
         if (results.flagged) {
           throw new Error("Query flagged by openai");
         }
-        const prompt = "You are a virtual assistant for a company called Huntabyte. Your name is Axel Smith";
+        const prompt = "Du er en virtuell assistent for at selskap kalt Zeppelin. Ditt navn er Vegar";
         tokenCount += getTokens(prompt);
         if (tokenCount >= 4e3) {
           throw new Error("Query too large");
@@ -51302,7 +51303,7 @@ var options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "9kfrec"
+  version_hash: "1qy4ty0"
 };
 function get_hooks() {
   return {};
@@ -54470,7 +54471,7 @@ var manifest = {
   assets: /* @__PURE__ */ new Set(["favicon.png"]),
   mimeTypes: { ".png": "image/png" },
   _: {
-    client: { "start": { "file": "_app/immutable/entry/start.a0db5e8d.js", "imports": ["_app/immutable/entry/start.a0db5e8d.js", "_app/immutable/chunks/index.c5da838d.js", "_app/immutable/chunks/singletons.2b01f444.js"], "stylesheets": [], "fonts": [] }, "app": { "file": "_app/immutable/entry/app.4f1c1f55.js", "imports": ["_app/immutable/entry/app.4f1c1f55.js", "_app/immutable/chunks/index.c5da838d.js"], "stylesheets": [], "fonts": [] } },
+    client: { "start": { "file": "_app/immutable/entry/start.1efa6256.js", "imports": ["_app/immutable/entry/start.1efa6256.js", "_app/immutable/chunks/index.c5da838d.js", "_app/immutable/chunks/singletons.a12dad0b.js"], "stylesheets": [], "fonts": [] }, "app": { "file": "_app/immutable/entry/app.2615c505.js", "imports": ["_app/immutable/entry/app.2615c505.js", "_app/immutable/chunks/index.c5da838d.js"], "stylesheets": [], "fonts": [] } },
     nodes: [
       () => Promise.resolve().then(() => (init__(), __exports)),
       () => Promise.resolve().then(() => (init__2(), __exports2))
